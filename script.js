@@ -15,19 +15,21 @@ function ShowAssignment(title, content) {
         </div>`;
 }
 
-function ShowWeek(_weekNumber, _assignment1, _assignment2) {
-  let week = {
-    WeekNumber: _weekNumber,
-    Assignment1: _assignment1,
-    Assignment2: _assignment2,
-  };
+function ShowWeek(_weekNumber, _assignment1, _assignment2, _assignment3, _discussion) {
+    let week = {
+        WeekNumber: _weekNumber,
+        Assignment1: _assignment1,
+        Assignment2: _assignment2,
+        Assignment3: _assignment3,
+        Discussion: _discussion,
+    };
 
-  let assignment1Node = document.querySelector("#assignment1");
-  let assignment2Node = document.querySelector("#assignment2");
-  let discussionNode = document.querySelector("#discussion");
+    let assignment1Node = document.querySelector("#assignment1");
+    let assignment2Node = document.querySelector("#assignment2");
+    let assignment3Node = document.querySelector("#assignment3");
+    let discussionNode = document.querySelector("#discussion");
 
-  assignment1Node.innerHTML = `<a href="#" onclick="ShowAssignment('Assignment 1', 
-        'Hi Corey, \
+    assignment1Node.innerHTML = `<a href="#" onclick="ShowAssignment('Assignment 1', 'Hi Corey, \
         You made some great points about how the firearm will be used. Safety is also a huge importance, so you could also consider a strong stock and recoil pad \
         to absorb the recoil keeping it safer for the user and avoiding damage to the gun. \
         All of the factors are indeed necessary to design the stock in order to maximize the comfort and usability of the shooter. \
@@ -48,7 +50,9 @@ function ShowWeek(_weekNumber, _assignment1, _assignment2) {
         Maria'
         )">${week.Assignment1}</a>`;
 
-  assignment2Node.innerHTML = `<a href="#" onclick="ShowAssignment('Assignment 2', 'This is the content for Assignment 2')">${week.Assignment2}</a>`;
+    assignment2Node.innerHTML = `<a href="#" onclick="ShowAssignment('Assignment 2', 'This is the content for Assignment 2')">${week.Assignment2}</a>`;
+    
+    assignment3Node.innerHTML = `<a href="#" onclick="ShowAssignment('Week 2 Discussion Comments', 'This is the content for the discussion comments')">${week.Discussion}</a>`;
 }
 
 function ShowAssignment(title, content) {
